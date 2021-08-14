@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll'
+import ErrorBoundry from '../components/Errorboundry'
 import './App.css'
 
 
@@ -52,7 +53,9 @@ if(this.state.robots.length === 0){
 		<h1 className='f1'>Robofriends</h1>
 		<SearchBox searchChange={this.onSearchChange}/>
 		<Scroll>
+		<ErrorBoundry>
 		<CardList robots={filteredrobots}/>
+		</ErrorBoundry>
 		</Scroll>
 		</div>
 		)}
